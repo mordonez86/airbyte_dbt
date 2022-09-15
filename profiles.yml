@@ -1,0 +1,16 @@
+config:
+  partial_parse: true
+  printer_width: 120
+  send_anonymous_usage_stats: false
+  use_colors: true
+normalize:
+  outputs:
+    prod:
+      database: morphconsultores
+      password: Inf0via187
+      port: 3306
+      schema: morphconsultores
+      server: morphconsultores.ctxamev9eiti.us-east-1.rds.amazonaws.com
+      type: mysql
+      username: admin
+  target: prod
