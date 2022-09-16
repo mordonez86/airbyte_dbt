@@ -1,7 +1,7 @@
 # add dependencies. these will get pulled during the `dbt deps` process.
 
 packages:
-  - git: "https://github.com/fishtown-analytics/dbt-utils.git"
+  - git: "https://github.com/dbt-labs/dbt-utils.git"
     revision: 0.8.2
   - package: sgoley/postgres_utils
     version: 0.2.0
