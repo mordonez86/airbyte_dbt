@@ -9,7 +9,7 @@
 select
     {{ adapter.quote('key') }},
     {{ adapter.quote('date') }},
-    new_tested,
+    nuevos_tested,
     new_deceased,
     total_tested,
     new_confirmed,

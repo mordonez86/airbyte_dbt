@@ -9,7 +9,7 @@
 select
     cast({{ adapter.quote('key') }} as {{ dbt_utils.type_string() }}) as {{ adapter.quote('key') }},
     cast({{ adapter.quote('date') }} as {{ dbt_utils.type_string() }}) as {{ adapter.quote('date') }},
-    cast(new_tested as {{ dbt_utils.type_string() }}) as new_tested,
+    cast(nuevos_tested as {{ dbt_utils.type_string() }}) as nuevos_tested,
     cast(new_deceased as {{ dbt_utils.type_string() }}) as new_deceased,
     cast(total_tested as {{ dbt_utils.type_string() }}) as total_tested,
     cast(new_confirmed as {{ dbt_utils.type_string() }}) as new_confirmed,

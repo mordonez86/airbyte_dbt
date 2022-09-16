@@ -9,7 +9,7 @@
 select
     {{ json_extract_scalar('_airbyte_data', ['key'], ['key']) }} as {{ adapter.quote('key') }},
     {{ json_extract_scalar('_airbyte_data', ['date'], ['date']) }} as {{ adapter.quote('date') }},
-    {{ json_extract_scalar('_airbyte_data', ['new_tested'], ['new_tested']) }} as new_tested,
+    {{ json_extract_scalar('_airbyte_data', ['new_tested'], ['new_tested']) }} as nuevos_tested,
     {{ json_extract_scalar('_airbyte_data', ['new_deceased'], ['new_deceased']) }} as new_deceased,
     {{ json_extract_scalar('_airbyte_data', ['total_tested'], ['total_tested']) }} as total_tested,
     {{ json_extract_scalar('_airbyte_data', ['new_confirmed'], ['new_confirmed']) }} as new_confirmed,
