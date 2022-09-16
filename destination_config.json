@@ -1,1 +1,1 @@
-{"ssl":false,"host":"morphconsultores.ctxamev9eiti.us-east-1.rds.amazonaws.com","port":3306,"database":"morphconsultores","password":"Inf0via187","username":"admin","tunnel_method":{"tunnel_method":"NO_TUNNEL"},"jdbc_url_params":""}
+{"ssl":false,"host":"localhost","port":2001,"schema":"public","database":"postgres","password":"mysecretpassword","ssl_mode":{"mode":"disable"},"username":"postgres","tunnel_method":{"tunnel_method":"NO_TUNNEL"}}

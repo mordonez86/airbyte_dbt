@@ -1,6 +1,6 @@
 version: 2
 sources:
-- name: morphconsultores
+- name: public
   quoting:
     database: true
     schema: false

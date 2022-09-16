@@ -1,10 +1,11 @@
 {{ config(
+    indexes = [{'columns':['_airbyte_emitted_at'],'type':'btree'}],
     unique_key = '_airbyte_ab_id',
-    schema = "_airbyte_morphconsultores",
+    schema = "_airbyte_public",
     tags = [ "top-level-intermediate" ]
 ) }}
 -- SQL model to parse JSON blob stored in a single column and extract into separated field columns as described by the JSON Schema
--- depends_on: {{ source('morphconsultores', '_airbyte_raw_covid_epidemiology') }}
+-- depends_on: {{ source('public', '_airbyte_raw_covid_epidemiology') }}
 select
     {{ json_extract_scalar('_airbyte_data', ['key'], ['key']) }} as {{ adapter.quote('key') }},
     {{ json_extract_scalar('_airbyte_data', ['date'], ['date']) }} as {{ adapter.quote('date') }},
@@ -19,7 +20,7 @@ select
     _airbyte_ab_id,
     _airbyte_emitted_at,
     {{ current_timestamp() }} as _airbyte_normalized_at
-from {{ source('morphconsultores', '_airbyte_raw_covid_epidemiology') }} as table_alias
+from {{ source('public', '_airbyte_raw_covid_epidemiology') }} as table_alias
 -- covid_epidemiology
 where 1 = 1
 

@@ -6,11 +6,12 @@ config:
 normalize:
   outputs:
     prod:
-      database: morphconsultores
-      password: Inf0via187
-      port: 3306
-      schema: morphconsultores
-      server: morphconsultores.ctxamev9eiti.us-east-1.rds.amazonaws.com
-      type: mysql
-      username: admin
+      dbname: postgres
+      host: localhost
+      pass: mysecretpassword
+      port: 2001
+      schema: public
+      threads: 8
+      type: postgres
+      user: postgres
   target: prod

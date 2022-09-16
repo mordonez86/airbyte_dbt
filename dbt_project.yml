@@ -16,7 +16,7 @@ macro-paths:
 - macros
 target-path: ../build
 log-path: ../logs
-packages-install-path: ../dbt
+packages-install-path: /dbt
 clean-targets:
 - build
 - dbt_modules
@@ -33,19 +33,23 @@ models:
         +materialized: ephemeral
       airbyte_incremental:
         +tags: incremental_tables
-        +materialized: table
+        +materialized: incremental
+        +on_schema_change: sync_all_columns
       airbyte_tables:
         +tags: normalized_tables
         +materialized: table
       airbyte_views:
         +tags: airbyte_internal_views
         +materialized: view
-vars:
-  dbt_utils_dispatch_list:
+dispatch:
+- macro_namespace: dbt_utils
+  search_order:
   - airbyte_utils
+  - dbt_utils
+vars:
   json_column: _airbyte_data
   models_to_source:
-    covid_epidemiology_ab1: morphconsultores._airbyte_raw_covid_epidemiology
-    covid_epidemiology_ab2: morphconsultores._airbyte_raw_covid_epidemiology
-    covid_epidemiology_ab3: morphconsultores._airbyte_raw_covid_epidemiology
-    covid_epidemiology: morphconsultores._airbyte_raw_covid_epidemiology
+    covid_epidemiology_ab1: public._airbyte_raw_covid_epidemiology
+    covid_epidemiology_ab2: public._airbyte_raw_covid_epidemiology
+    covid_epidemiology_ab3: public._airbyte_raw_covid_epidemiology
+    covid_epidemiology: public._airbyte_raw_covid_epidemiology
