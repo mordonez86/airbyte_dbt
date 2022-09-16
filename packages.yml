@@ -3,5 +3,3 @@
 packages:
   - git: "https://github.com/dbt-labs/dbt-utils.git"
     revision: 0.8.2
-  - package: sgoley/postgres_utils
-    version: 0.2.0
